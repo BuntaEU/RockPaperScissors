@@ -1,7 +1,13 @@
 let computerMove;
+let computerScore = 0;
 let playerMove;
-let gameScore;
+let playerScore = 0;
 let gameMessage;
+
+function capitalizeFirstLetter(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function getComputerChoice() {
 	let randomNum = Math.floor(Math.random() * 3);
 	if (randomNum === 0) {
@@ -32,16 +38,45 @@ function playerSelection() {
 	}
 }
 
-function gameRPS(computerMove, playerMove) {
+function playRound(computerMove, playerMove) {
 	computerMove = getComputerChoice();
 	playerMove = playerSelection();
-	if (playerMove === computerMove) {
+	if (
+		(playerMove == "rock" && computerMove == "scissors") ||
+		(playerMove == "scissors" && computerMove == "paper") ||
+		(playerMove == "paper" && computerMove == "rock")
+	) {
+		playerScore += 1;
 		gameMessage =
-			"It's a draw! " + playerMove + " and " + computerMove + " are the same! ";
-	} else if (computerMove == "rock" && playerMove == "sci")
-		return playerMove, computerMove;
+			"You win! " +
+			capitalizeFirstLetter(playerMove) +
+			" beats " +
+			capitalizeFirstLetter(computerMove) +
+			" !";
+	} else if (playerMove == computerMove) {
+		gameMessage =
+			capitalizeFirstLetter(playerMove) +
+			" and " +
+			capitalizeFirstLetter(computerMove) +
+			" are the same! \n It's a draw!";
+	} else {
+		computerScore += 1;
+		gameMessage =
+			capitalizeFirstLetter(computerMove) +
+			" beats " +
+			capitalizeFirstLetter(playerMove) +
+			"\n You lose!";
+	}
+	return;
 }
 
-function game(gameRPS) {
-	for (let i = 0; i < 5; i++) {}
+function game() {
+	for (let i = 0; i < 5; i++) {
+		playRound();
+		console.log(gameMessage);
+		console.log(computerScore, playerScore);
+		console.log(i);
+	}
+	computerScore = 0;
+	playerScore = 0;
 }
