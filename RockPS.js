@@ -4,10 +4,12 @@ let playerMove;
 let playerScore = 0;
 let gameMessage;
 
+/* Used to capitalize important words */
 function capitalizeFirstLetter(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+/* Randomizes the computers choice */
 function getComputerChoice() {
 	let randomNum = Math.floor(Math.random() * 3);
 	if (randomNum === 0) {
@@ -20,6 +22,7 @@ function getComputerChoice() {
 	return computerMove;
 }
 
+/* asks for the players selection */
 function playerSelection() {
 	let playerMove = window
 		.prompt("Enter for Rock, Paper or Scissors")
@@ -38,6 +41,7 @@ function playerSelection() {
 	}
 }
 
+/* code for the rounds played */
 function playRound(computerMove, playerMove) {
 	computerMove = getComputerChoice();
 	playerMove = playerSelection();
@@ -67,9 +71,10 @@ function playRound(computerMove, playerMove) {
 			capitalizeFirstLetter(playerMove) +
 			"\n You lose!";
 	}
-	return;
+	return playerScore, computerScore;
 }
 
+/* calls the other functions and plays the rounds with a loop */
 function game() {
 	for (let i = 0; i < 5; i++) {
 		playRound();
