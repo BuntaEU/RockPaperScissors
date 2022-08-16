@@ -1,5 +1,6 @@
 let computerMove;
 let computerScore = 0;
+let playerMove;
 let playerScore = 0;
 let gameMessage;
 
@@ -48,17 +49,37 @@ function getComputerChoice() {
 } */
 
 /* code for the rounds played */
-function playRound() {
-	let playerMove;
-	playButtons.forEach((weapon) => {
-		weapon.addEventListener("click", () => {
-			if (weapon.classList.contains("rock")) {
-				playerMove = "rock";
-			} else if (weapon.classList.contains("paper")) {
-				playerMove = "paper";
-			} else {
-				playerMove = "scissors";
-			}
-		});
-	});
+function playRound(computerMove, playerMove) {
+	playerMove = this;
+	console.log(playerMove);
+	computerMove = getComputerChoice();
+	console.log(this.classList.contains("rock"));
+	if (
+		(playerMove == "rock" && computerMove == "scissors") ||
+		(playerMove == "scissors" && computerMove == "paper") ||
+		(playerMove == "paper" && computerMove == "rock")
+	) {
+		playerScore += 1;
+		gameMessage = "You win! " + playerMove + " beats " + computerMove + " !";
+	} else if (playerMove == computerMove) {
+		gameMessage =
+			playerMove + " and " + computerMove + " are the same! \n It's a draw!";
+	} else {
+		computerScore += 1;
+		gameMessage = computerMove + " beats " + playerMove + "\n You lose!";
+	}
+	return playerScore, computerScore;
 }
+/* calls the other functions and plays the rounds with a loop */
+/* function game() {
+	for (let i = 0; i < 5; i++) {
+		playRound();
+		console.log(gameMessage);
+		console.log(computerScore, playerScore);
+		console.log(i);
+	} */
+computerScore = 0;
+playerScore = 0;
+playButtons.forEach((weapon) => {
+	weapon.addEventListener("click", playRound);
+});
