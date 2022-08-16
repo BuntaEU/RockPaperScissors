@@ -1,0 +1,39 @@
+body {
+    font-family: 'DynaPuff', cursive;
+    color:black;
+}
+.headline{
+    color: rgb(112, 69, 5);
+    font-size: 70px;
+}
+
+.gameHeader {
+    text-align: center;
+    font-size: 20px;
+}
+header p{
+    display: flex;
+    gap:10px; 
+    align-items: center;
+    justify-content: center;
+    flex:auto;;
+    flex-wrap: wrap;
+    font-size:15px
+}
+.eyeCatch{
+    font-size: 20px;
+    display:flex;
+    justify-content: baseline;
+    margin-bottom: 25px;
+}
+
+.silver-color{
+    color:grey
+}
+.red-color{
+    color:red
+}
+.gold-color{
+    color:goldenrod
+}
+
