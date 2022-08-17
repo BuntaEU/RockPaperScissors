@@ -51,11 +51,15 @@ header p{
 
 }
 
-.play {
+/* .play {
     background-color:transparent;
     border:none;
-}
-.play:focus,.play-again:focus{
+} */
+/* .play:focus,.play-again:focus{
     outline:none;
+} */
+.play.rock{
+    background-image:url(C:\Users\paan\Documents\GitHub\RockPaperScissors\Images\InfinityEdge.jpg) no-repeat;
+    background-size:cover;
 }
 
