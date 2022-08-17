@@ -1,2 +1,2 @@
 # RockPaperScissors
- Oding Project RSP
+ Odin Project RSP
