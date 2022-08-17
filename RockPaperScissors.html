@@ -4,9 +4,68 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Rock Paper Scissors Game</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<header class="gameHeader">
+			<h1>
+				<p class="headline">Battle of Runeterra</p>
+			</h1>
+			<p class="eyeCatch">
+				<span class="silver-color"> 3 Weapons </span>
+				|
+				<span class="red-color"> 5 Lives</span>
+				|
+				<span class="gold-color"> 1 Winner</span>
+			</p>
+			<p class="rules">
+				<span class="yellow-color">Infinity Edge</span> beats
+				<span class="red-color">Rabadon's Deathcap</span>
+				|
+				<span class="green-color">Phantom Dancer</span> beats
+				<span class="yellow-color">Infinity Edge</span>
+				|
+				<span class="red-color">Rabadon's Deathcap</span> beats
+				<span class="green-color">Phantom Dancer</span>
+			</p>
+		</header>
+
+		<main class="main-content">
+			<div class="items">
+				<button class="rock play rockbox" type="button"></button>
+				<button class="paper play paperbox" type="button"></button>
+				<button class="scissors play scissorsbox" type="button"></button>
+			</div>
+			<img src="Images/divider.png" alt="divider" class="divider" />
+			<div class="game-output">
+				<div class="compPlay black-border centering">
+					<p class="enemy-title">Opponent's Weapon</p>
+					<i class="compIcon rock paper scissors"></i>
+				</div>
+				<div class="game-results">
+					<p class="round">Round: 0</p>
+					<p class="lives">Your Lives: 5 | Opponent Lives: 5</p>
+					<p class="combat-text">Arena: Empty</p>
+				</div>
+			</div>
+
+			<div class="game-end-div">
+				<p class="game-end-text"></p>
+				<button class="play-again">Queue Again!</button>
+			</div>
+		</div>
+		</main>
+		<footer class="copyright">
+			<p>Made by BuntaEU</p>
+		</footer>
+
 		<script src="RockPS.js"></script>
 	</body>
 </html>
