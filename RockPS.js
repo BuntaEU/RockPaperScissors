@@ -9,8 +9,9 @@ let round = 0;
 
 //Counts the Rounds
 function countRounds() {
+	console.log(round);
 	round += 1;
-	round.innerHTML = `Round: ${round}`;
+	rounds.innerText = `Round: ${round}`
 	return round;
 }
 //Randomizes Computer Choice
@@ -44,7 +45,7 @@ function countLives(playerMove, computerMove) {
 				"yellow-border",
 				"green-border"
 			);
-			compPlayDiv.classList.add("grey-border");
+			compPlayDiv.classList.add("purple-border");
 			break;
 		case playerMove === "rock" && computerMove === "scissors":
 		case playerMove === "paper" && computerMove === "rock":
@@ -54,6 +55,7 @@ function countLives(playerMove, computerMove) {
 			compPlayDiv.classList.remove(
 				"red-border",
 				"yellow-border",
+				"purple-border",
 				"grey-border"
 			);
 			compPlayDiv.classList.add("green-border");
@@ -76,11 +78,33 @@ function countLives(playerMove, computerMove) {
 	return [playerLives, compLives];
 }
 function endGame(playerLives, compLives) {
-	if (playerHealth === 0 || compLives === 0) {
-		weaponsButtons.forEach(button);
+	if (playerLives === 0 || compLives === 0) {
+		itemButtons.forEach((button) =>{
+			button.setAttribute("disabled","");
+			button.classList.add("disabled-button","opacity");
+		});
+		const compIcon = document.querySelector(".compIcon");
+		compIcon.style.opacity="0.5";
+
+		const gameEndText = document.querySelector(".game-end-text")
+		if (playerLives> compLives){
+			combatText.innerText="poor enemy no lives left";
+			gameEndText.textContent="you won!";
+			gameEndText.style.color = '#62b49c';
+		} else{ 
+			combatText.innerText="No lives left for you";
+			gameEndText.textContent="you lost loser!";
+			gameEndText.style.color = '#b96b78';
+
+		}
+		playAgainButton.style.visibility ="visible";
 	}
 }
-
+function resetGame(){
+	playAgainButton.addEventListener("click",()=> {
+		window.location.reload();
+	});
+}
 function playRound() {
 	let playerMove;
 	itemButtons.forEach((weapon) => {
@@ -94,6 +118,8 @@ function playRound() {
 			}
 			countRounds();
 			countLives(playerMove, getComputerChoice());
+			endGame(playerLives,compLives);
+			resetGame();
 		});
 	});
 }
