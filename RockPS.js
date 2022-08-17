@@ -67,8 +67,9 @@ function countLives(playerMove, computerMove) {
 			compPlayDiv.classList.remove(
 				"grey-border",
 				"yellow-border",
-				"green-border"
-			);
+				"green-border",
+				"purple-border"
+							);
 			compPlayDiv.classList.add("red-border");
 			playerLives -= 1;
 			break;
