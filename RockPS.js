@@ -76,7 +76,6 @@ function countLives(playerMove, computerMove) {
 	}
 	const lives = document.querySelector(".lives");
 	lives.innerText = `Your lives: ${playerLives} | Enemy's Lives: ${compLives}`;
-	return [playerLives, compLives];
 }
 function endGame(playerLives, compLives) {
 	if (playerLives === 0 || compLives === 0) {
