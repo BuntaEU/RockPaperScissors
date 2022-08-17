@@ -2,6 +2,13 @@ body {
     font-family: 'DynaPuff', cursive;
     color:black;
 }
+
+.play.rock{
+    background:url(../RockPaperScissors/Images/InfinityEdge.jpg);
+    width: 100px;
+    height: 100px;
+    background-size:cover;
+}
 .headline{
     color: rgb(112, 69, 5);
     font-size: 70px;
@@ -58,8 +65,5 @@ header p{
 /* .play:focus,.play-again:focus{
     outline:none;
 } */
-.play.rock{
-    background-image:url(C:\Users\paan\Documents\GitHub\RockPaperScissors\Images\InfinityEdge.jpg) no-repeat;
-    background-size:cover;
-}
+
 
