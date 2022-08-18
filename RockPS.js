@@ -41,6 +41,8 @@ function countLives(playerMove, computerMove) {
 		case playerMove === computerMove:
 			combatText.innerText = `Hmm.. Two ${playerMove}s means a draw, so no lives were lost. Let's try again.`;
 			gameOutput.style.border = "4px solid #8070ac";
+			gameOutput.classList.add("shadowPurple");
+			gameOutput.classList.remove("shadowGreen", "shadowRed");
 			compPlayDiv.classList.remove(
 				"red-border",
 				"yellow-border",
@@ -57,6 +59,8 @@ function countLives(playerMove, computerMove) {
 		case playerMove === "scissors" && computerMove === "paper":
 			combatText.textContent = `Impressive attack! The enemy lost one life, because the great power of your ${playerMove} crushed his ${computerMove}!`;
 			gameOutput.style.border = "4px solid #62b49c";
+			gameOutput.classList.add("shadowGreen");
+			gameOutput.classList.remove("shadowPurple", "shadowRed");
 			result.innerText = "WIN";
 			result.classList.remove("red-color", "purple-color");
 			result.classList.add("green-color");
@@ -72,6 +76,8 @@ function countLives(playerMove, computerMove) {
 		default:
 			combatText.textContent = "loser";
 			gameOutput.style.border = "4px solid #b96b78";
+			gameOutput.classList.add("shadowRed");
+			gameOutput.classList.remove("shadowGreen", "shadowPurple");
 			result.innerText = "Lose";
 			result.classList.remove("green-color", "purple-color");
 			result.classList.add("red-color");

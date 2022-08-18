@@ -1,3 +1,4 @@
+
 body {
     font-family: 'DynaPuff', cursive;
     color:black;
@@ -194,7 +195,17 @@ header p{
 .purple-border{
     border-right:4px solid #8070ac;
 }
+.shadowRed{
+    box-shadow:0px 0px 10px 5px rgb(231, 27, 27);
+}
+.shadowGreen{
+    box-shadow: 0px 0px 10px 5px rgb(0, 221, 11);
 
+}
+.shadowPurple{
+     box-shadow: 0px 0px 10px 5px #ff49f0;
+
+}
 .opacity{
     opacity: 0.5;
 }
