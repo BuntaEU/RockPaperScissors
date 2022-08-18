@@ -74,7 +74,7 @@ function countLives(playerMove, computerMove) {
 			compLives -= 1;
 			break;
 		default:
-			combatText.textContent = "loser";
+			combatText.textContent = "You lost, try again if you're not a scared chicken";
 			gameOutput.style.border = "4px solid #b96b78";
 			gameOutput.classList.add("shadowRed");
 			gameOutput.classList.remove("shadowGreen", "shadowPurple");
