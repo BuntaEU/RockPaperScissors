@@ -23,7 +23,10 @@ header p{
 }
 #audio{
     margin-top: 0.5em;
-
+}
+.soundtext{
+    font-family:'Courier New', Courier, monospace;
+    margin-top: -0.3em;
 }
 .eyeCatch{
     font-size: 35px;
