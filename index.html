@@ -15,6 +15,10 @@
 	</head>
 	<body>
 		<header class="gameHeader">
+			<audio controls id="audio" autplay>
+			<source src="/Music/Draft Mode.mp3">
+		</audio>
+		<p class="soundtext">Champion Select Season 1-6</p>
 			<h1>
 				<p class="headline">Battle of Runeterra</p>
 			</h1>
@@ -36,7 +40,7 @@
 				<span class="green-color">Phantom Dancer</span>
 			</p>
 		</header>
-
+		
 		<main class="main-content">
 			<div class="items">
 				<button class="rock play rockbox" type="button"></button>
@@ -51,8 +55,11 @@
 				</div>
 				<div class="game-results">
 					<p class="round">Round: 0</p>
-					<p class="lives">Your Lives: 5 | Opponent Lives: 5</p>
+					<p class="lives">Your Lives: 5 | Enemy Lives: 5</p>
 					<p class="combat-text">Arena: Empty</p>
+				</div>
+				<div class ="res">
+					<p class = "resu">Result</p>
 				</div>
 			</div>
 
@@ -66,6 +73,6 @@
 			<p>Made by BuntaEU</p>
 		</footer>
 
-		<script src="RockPS.js"></script>
+		<script src="RockPS.js" defer></script>
 	</body>
 </html>
